@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-8">
+            <h1>Pick Your Lunch Destination</h1>
+        </div>
+    </div>
+
+   <div class="adminButton">
+       <button type="button" class="btn btn-info btn-sm">Admin Page</button>
+   </div>
+    <hr>
+
+    <p>Enter your Email</p>
+   <form>
+       <p style="color:red;">{{errorMsg}}</p>
+        <input type="email" [(ngModel)]="email" name="email" style="width:600px;" class="form-control" required>
+   </form>
+          
+   
+
+    <br><br>
+
+    <h2>Vote your desired place </h2>
+    <p style="color:red;font-weight:bold;">{{duplicateEmail}}</p>
+
+    <!-- <ul type="circle" *ngFor="let place of votingPlace">
+        <li>{{place.name}} || {{place.address}} || <button>vote</button></li>
+    </ul> -->
+
+    <table class="table table-boardered" cellspacing="20">
+        <th>SN</th>
+        <th>Place Name</th>
+        <th>Address</th>
+
+        <tr *ngFor="let place of votingPlace;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{place.name}}</td>
+            <td>{{place.address}}</td>
+            <td><button class="btn btn-primary btn-sm" (click)="vote(place)">Vote</button></td>
+        </tr>
+    </table>
+
+    <hr>
+    <h2>Voting Result</h2>
+
+<ul type="square" style="margin-bottom: 70px;">
+    <li>{{countKantipur}} || Kantipur</li>
+    <li>{{countBurger}} || Burger House</li>
+    <li>{{countBishalMomo}} || Bishal Momo</li>
+    <li><b style="color:blue;">Total=</b>{{countKantipur+countBurger+countBishalMomo}}</li>
+</ul>
+    
+
+    
+
+</div>
