@@ -19,6 +19,8 @@ export class VotingIndexComponent implements OnInit {
   countKantipur:number=0;
   countBurger:number=0;
   countBishalMomo:number=0;
+  placeName:String="";
+  placeStatus:boolean=false;
 
 
 
@@ -52,6 +54,12 @@ export class VotingIndexComponent implements OnInit {
           console.log("bishal house")
           this.countBishalMomo++;
         }
+
+        this.placeName=place.name;
+        this.placeStatus=true;
+        setTimeout(()=>{
+          this.placeStatus=false;
+        },3000)
         this.voting_record.push(newVote);
      }
      

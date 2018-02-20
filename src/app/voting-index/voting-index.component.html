@@ -6,6 +6,15 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-sm-12">
+                <div *ngIf="placeStatus" class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <p>You have voted for {{placeName}}</p>
+                      </div>
+        </div>
+    </div>
+
    <div class="adminButton">
        <button type="button" class="btn btn-info btn-sm">Admin Page</button>
    </div>
@@ -21,7 +30,7 @@
 
     <br><br>
 
-    <h2>Vote your desired place </h2>
+    <h2 style="font-family:cursive">Vote your desired place </h2>
     <p style="color:red;font-weight:bold;">{{duplicateEmail}}</p>
 
     <!-- <ul type="circle" *ngFor="let place of votingPlace">
@@ -42,14 +51,42 @@
     </table>
 
     <hr>
-    <h2>Voting Result</h2>
+    <h2 style="font-family:cursive">Voting Result</h2>
 
-<ul type="square" style="margin-bottom: 70px;">
+<!-- <ul type="square" style="margin-bottom: 70px;">
     <li>{{countKantipur}} || Kantipur</li>
     <li>{{countBurger}} || Burger House</li>
     <li>{{countBishalMomo}} || Bishal Momo</li>
     <li><b style="color:blue;">Total=</b>{{countKantipur+countBurger+countBishalMomo}}</li>
-</ul>
+</ul> -->
+
+<table class="table table-striped">
+   
+    <tr>
+            <th>Name</th>
+            <th>Count</th>
+    </tr>
+    
+    <tr>
+        <td>Kantipur</td>
+        <td>{{countKantipur}}</td>
+    
+    </tr>
+    <tr>
+        <td>BurgerHouse</td>
+        <td>{{countBurger}}</td>
+    </tr>
+    <tr>
+        <td>Bishal Momo </td>
+        <td>{{countBishalMomo}}</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+         <b>Total=</b> {{countKantipur+countBurger+countBishalMomo}}
+        </td>
+    </tr>
+
+</table>
     
 
     
